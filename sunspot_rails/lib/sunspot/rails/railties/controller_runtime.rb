@@ -25,6 +25,7 @@ module Sunspot
 
         module ClassMethods
           def log_process_action(payload)
+            raise 'boom3'
             messages, solr_runtime = super, payload[:solr_runtime]
             messages << ("Solr: %.1fms" % solr_runtime.to_f) if solr_runtime
             messages
