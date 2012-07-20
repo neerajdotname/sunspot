@@ -11,6 +11,7 @@ module Sunspot
       COMMIT = %r{<commit/>}
 
       def execute_with_rails_logging(client, request_context)
+        raise 'execute with rails logging'
         body = (request_context[:data]||"").dup
         action = request_context[:path].capitalize
         if body =~ COMMIT

@@ -239,6 +239,7 @@ module Sunspot #:nodoc:
         #   Post.index(:include => :author)
         #
         def solr_index(opts={})
+          raise 'in solr_index'
           options = {
             :batch_size => Sunspot.config.indexing.default_batch_size,
             :batch_commit => true,
@@ -479,6 +480,7 @@ module Sunspot #:nodoc:
         end
 
         def perform_index_tasks
+          raise 'perform_index_tasks'
           if @marked_for_auto_indexing
             solr_index
             remove_instance_variable(:@marked_for_auto_indexing)

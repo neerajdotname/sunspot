@@ -9,6 +9,7 @@ module Sunspot
 
 
       def execute_with_as_instrumentation(path, params={}, *extra)
+        raise 'in instrumentation'
         ActiveSupport::Notifications.instrument("request.rsolr",
                                                 {:path => path, :parameters => params}) do
           execute_without_as_instrumentation(path, params, *extra)
